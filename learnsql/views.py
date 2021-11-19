@@ -6,7 +6,7 @@ from django.urls import reverse
 from django.views.decorators.http import require_GET, require_POST
 from .models import Customer
 from django.contrib.auth.decorators import login_required
-#from django.contrib import messages
+from django.contrib import messages
 from .forms import SqlForm
 from django.db import connection
 
