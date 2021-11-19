@@ -3,7 +3,13 @@
 
 {% block content %}
 
-<h3 class="mt-5 mb-5">Velkommen til SQL-læring!</h3>
+<h3 class="mt-5 mb-5">Velkommen til Lær SQL!</h3>
+
+<h5>Tabeller i databasen</h5>
+<ul class="list-group mb-5">
+  <li class="list-group-item">customer</li>
+  <li class="list-group-item">city</li>
+</ul>
 
 <form action="" method="post" class="mb-5">{% csrf_token %}
      {{ form|crispy }}

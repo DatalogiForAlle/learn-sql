@@ -1,11 +1,17 @@
 from django.contrib import admin
 
-from .models import Customer
+from .models import Customer, City
 
 
 class CustomerAdmin(admin.ModelAdmin):
     list_display = (
-        'id', 'customer_name', 'contact_last_name', 'contact_first_name')
+        'id', 'first_name', 'last_name', 'age', 'city')
+
+
+class CityAdmin(admin.ModelAdmin):
+    list_display = (
+        'id', 'name', 'size')
 
 
 admin.site.register(Customer, CustomerAdmin)
+admin.site.register(City, CityAdmin)
