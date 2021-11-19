@@ -1,4 +1,5 @@
 from django import forms
+from django.core.exceptions import ValidationError
 
 
 class SqlForm(forms.Form):
@@ -9,3 +10,15 @@ class SqlForm(forms.Form):
         required=True,
         label="Indtast en SQL-forespørgsel i boksen og tryk på 'send'",
         help_text="")
+
+    def clean_sql(self):
+        sql = self.cleaned_data['sql']
+
+        if "delete" in sql.lower():
+            raise forms.ValidationError(
+                'Du har ikke tilladelse til at udføre DELETE-operationer')
+
+        if "update" in sql.lower():
+            raise forms.ValidationError(
+                'Du har ikke tilladelse til at udføre UPDATE-operationer')
+        return sql

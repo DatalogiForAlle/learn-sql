@@ -29,10 +29,14 @@ def home(request):
         if form.is_valid():
 
             cursor = connection.cursor()
-            cursor.execute(form.cleaned_data['sql'])
-            results = dictfetchall(cursor)
 
-            context["results"] = results
+            try:
+                cursor.execute(form.cleaned_data['sql'])
+                results = dictfetchall(cursor)
+                context["results"] = results
+
+            except:
+                context['sql_error'] = True
 
     elif request.method == "GET":
         form = SqlForm(initial={'sql': 'SELECT * FROM customer'})
