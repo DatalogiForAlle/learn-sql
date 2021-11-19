@@ -2,7 +2,7 @@ name: Build and test LearnSql
 
 on:
   push:
-    branches: 'master'
+    branches: 'main'
   pull_request:
     branches: '*'
 
