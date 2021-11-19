@@ -1,16 +1,6 @@
 from django.shortcuts import render
-
-from django.shortcuts import render, redirect, get_object_or_404
-#from django.http import HttpResponseRedirect, HttpResponse
-from django.urls import reverse
-from django.views.decorators.http import require_GET, require_POST
-from .models import Customer
-from django.contrib.auth.decorators import login_required
-from django.contrib import messages
 from .forms import SqlForm
 from django.db import connection
-
-# https: // www.youtube.com/watch?v = _TtBxvYwoHY & t = 472s
 
 
 def dictfetchall(cursor):
@@ -34,6 +24,7 @@ def home(request):
                 cursor.execute(form.cleaned_data['sql'])
                 results = dictfetchall(cursor)
                 context["results"] = results
+                context['sql_succes'] = True
 
             except:
                 context['sql_error'] = True
