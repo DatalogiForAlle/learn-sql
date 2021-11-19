@@ -10,4 +10,4 @@ python manage.py collectstatic --noinput --clear
 
 echo "${0}: running production server."
 mkdir -p /var/log/gunicorn
-gunicorn config.wsgi:application --bind 0.0.0.0:8000 
+gunicorn config.wsgi:application --bind 0.0.0.0:8010 
