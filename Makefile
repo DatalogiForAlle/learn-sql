@@ -31,6 +31,9 @@ migrate: # make migrations
 dev_superuser: # make development superuser 
 	docker-compose -f docker-compose.dev.yml exec web python manage.py createsuperuser
 
+loaddata: # load initial data into database 
+	docker-compose -f docker-compose.dev.yml exec web python manage.py loaddata city.json
+	docker-compose -f docker-compose.dev.yml exec web python manage.py loaddata customer.json
 
 # ---------- Checks and tests ---------- #
 test: ## Execute tests within the docker image
