@@ -10,7 +10,7 @@ help:   # Show this help.
 
 # ---------- Development ---------- #
 build:  ## Build or rebuild development docker image
-	docker-compose -f dock	r-compose.dev.yml build
+	docker-compose -f docker-compose.dev.yml build
 
 develop:  ## Run development server
 	docker-compose -f docker-compose.dev.yml up --remove-orphans
