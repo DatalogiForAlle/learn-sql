@@ -36,6 +36,6 @@ class SqlForm(forms.Form):
 
         if sql.lower()[:6].lower() != 'select':
             raise forms.ValidationError(
-                'Kun SELECT-operationer er tilladte')
+                "Din forespørgsel skal starte med 'SELECT'")
 
         return sql
