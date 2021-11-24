@@ -47,5 +47,5 @@ class SqlFormtests(TestCase):
         is_valid = form.is_valid()
 
         self.assertFalse(is_valid)
-        assert 'Kun SELECT-operationer er tilladte' in str(
+        assert "Din forespørgsel skal starte med &#x27;SELECT&#x27" in str(
             form.errors)

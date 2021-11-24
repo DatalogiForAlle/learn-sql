@@ -2,10 +2,10 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    
+
 {% if sql_error %}
      <div class="alert alert-danger mt-5 mb-5">Din forespørgsel mislykkedes</div>
-{% elif sql_succes %}
+{% elif sql_success %}
      <div class="alert alert-success mt-5 mb-5">Din forespørgsel lykkedes</div>
 {% else %}
      <h3 class="mt-5 mb-5">Velkommen til Lær SQL!</h3>

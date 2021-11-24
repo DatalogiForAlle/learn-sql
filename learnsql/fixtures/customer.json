@@ -1,0 +1,24 @@
+[
+    {
+      "model": "learnsql.customer",
+      "pk": 1,
+      "fields": {
+        "first_name": "Hans",
+        "last_name": "Bornson",
+        "address": "Vejen 39, 1.tv.",
+        "age": "23",
+        "city": "2"
+        }
+    },
+    {
+      "model": "learnsql.customer",
+      "pk": 2,
+      "fields": {
+        "first_name": "Mette",
+        "last_name": "Holm",
+        "address": "Engblommevej 39, 1.tv.",
+        "age": "24",
+        "city": "1"
+      }
+    }
+  ]

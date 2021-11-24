@@ -1,0 +1,18 @@
+[
+    {
+      "model": "learnsql.city",
+      "pk": 1,
+      "fields": {
+        "name": "Odense",
+        "size": "54321"
+      }
+    },
+    {
+      "model": "learnsql.city",
+      "pk": 2,
+      "fields": {
+        "name": "Esbjerg",
+        "size": "2342"
+      }
+    }
+  ]

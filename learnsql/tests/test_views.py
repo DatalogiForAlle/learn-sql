@@ -13,4 +13,12 @@ class HomeViewGetRequestTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'learnsql/home.html')
 
- # test post requests
+
+class HomeViewPostRequestTests(TestCase):
+
+    def test_home_view_url_exists_at_proper_location_and_uses_proper_template_2(self):
+        response = self.client.post(reverse('home'), {'sql': 'nonsense'})
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'learnsql/home.html')
+        self.assertContains(
+            response, "Din forespørgsel skal starte med &#x27;SELECT&#x27")
