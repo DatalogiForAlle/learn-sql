@@ -12,3 +12,5 @@ class HomeViewGetRequestTests(TestCase):
         response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'learnsql/home.html')
+
+ # test post requests

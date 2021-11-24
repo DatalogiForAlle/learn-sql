@@ -21,4 +21,21 @@ class SqlForm(forms.Form):
         if "update" in sql.lower():
             raise forms.ValidationError(
                 'Du har ikke tilladelse til at udføre UPDATE-operationer')
+
+        if "create" in sql.lower():
+            raise forms.ValidationError(
+                'Du har ikke tilladelse til at udføre CREATE-operationer')
+
+        if "drop" in sql.lower():
+            raise forms.ValidationError(
+                'Du har ikke tilladelse til at udføre DROP-operationer')
+
+        if "insert" in sql.lower():
+            raise forms.ValidationError(
+                'Du har ikke tilladelse til at udføre INSERT-operationer')
+
+        if sql.lower()[:6].lower() != 'select':
+            raise forms.ValidationError(
+                'Kun SELECT-operationer er tilladte')
+
         return sql
